@@ -17,7 +17,11 @@ void Compte::Effectuer_depot(double somme)
 	this->solde += somme;	
 	
 }
-
+/*
+* Nom_methode:Effectuer_retrait
+* Parametres:somme:type double
+* Description:Decremente le solde du compte par la somme donnée
+*/
 void Compte::Effectuer_retrait(double somme)
 {
 	if (somme <= this->solde)
@@ -27,7 +31,12 @@ void Compte::Effectuer_retrait(double somme)
 	}
 
 }
-
+/*
+* Nom_methode:Transferer
+* Parametres:somme:type double et un objet Compte
+* Description:fait un retait de somme sur le solde du compte courant
+*             et ajoute somme qu solde du compte passé en parametre
+*/
 void Compte::Transferer(double somme, Compte& recever)
 {
 	if (this->solde >= somme)
@@ -36,7 +45,11 @@ void Compte::Transferer(double somme, Compte& recever)
 		recever.solde += somme;		
 	}
 }
-
+/*
+* Nom_methode:consulter
+* Parametres:Aucun
+* Description:Affichage a l'ecran
+*/
 void Compte::consulter() const
 {
 	cout << "Account_id:" << this->id_compte << endl;
@@ -44,6 +57,4 @@ void Compte::consulter() const
 	cout << "Solde: " << this->solde << endl;
 }
 
-Compte::~Compte()
-{
-}
+
